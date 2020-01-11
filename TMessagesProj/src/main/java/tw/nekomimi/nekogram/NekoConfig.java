@@ -21,6 +21,7 @@ public class NekoConfig {
     public static boolean transparentStatusBar = true;
     public static boolean residentNotification = false;
     public static boolean hideProxySponsorChannel = false;
+    public static boolean saveFilesToPrivateDirectory = true;
 
     public static boolean showAddToSavedMessages = true;
     public static boolean showReport = false;
@@ -57,6 +58,7 @@ public class NekoConfig {
                 editor.putBoolean("transparentStatusBar", transparentStatusBar);
                 editor.putBoolean("residentNotification", residentNotification);
                 editor.putBoolean("hideProxySponsorChannel", hideProxySponsorChannel);
+                editor.putBoolean("saveFilesToPrivateDirectory", saveFilesToPrivateDirectory);
                 editor.putBoolean("showAddToSavedMessages", showAddToSavedMessages);
                 editor.putBoolean("showReport", showReport);
                 editor.putBoolean("showPrPr", showPrPr);
@@ -93,6 +95,7 @@ public class NekoConfig {
             transparentStatusBar = preferences.getBoolean("transparentStatusBar", true);
             residentNotification = preferences.getBoolean("residentNotification", false);
             hideProxySponsorChannel = preferences.getBoolean("hideProxySponsorChannel", false);
+            saveFilesToPrivateDirectory = preferences.getBoolean("saveFilesToPrivateDirectory", true);
             showAddToSavedMessages = preferences.getBoolean("showAddToSavedMessages", true);
             showReport = preferences.getBoolean("showReport", false);
             showPrPr = preferences.getBoolean("showPrPr", true);
@@ -249,6 +252,14 @@ public class NekoConfig {
         SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("hideProxySponsorChannel", hideProxySponsorChannel);
+        editor.commit();
+    }
+
+    public static void toggleSaveFilesToPrivateDirectory() {
+        saveFilesToPrivateDirectory = !saveFilesToPrivateDirectory;
+        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("saveFilesToPrivateDirectory", saveFilesToPrivateDirectory);
         editor.commit();
     }
 

@@ -1293,7 +1293,7 @@ public class AndroidUtilities {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (state == null || state.startsWith(Environment.MEDIA_MOUNTED)) {
+        if (!NekoConfig.saveFilesToPrivateDirectory && (state == null || state.startsWith(Environment.MEDIA_MOUNTED))) {
             try {
                 File file = ApplicationLoader.applicationContext.getExternalCacheDir();
                 if (file != null) {
