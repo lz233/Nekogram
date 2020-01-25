@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <permission android:name="tw.nekomimi.nekogram.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <permission android:name="${applicationId}.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
 
     <application
         android:allowBackup="false"

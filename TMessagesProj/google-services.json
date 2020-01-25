@@ -1,39 +1,66 @@
 {
   "project_info": {
-    "project_number": "551995224478",
-    "firebase_url": "https://nekogram-b43bb.firebaseio.com",
-    "project_id": "nekogram-b43bb",
-    "storage_bucket": "nekogram-b43bb.appspot.com"
+    "project_number": "59666092817",
+    "firebase_url": "https://nekogram-im.firebaseio.com",
+    "project_id": "nekogram-im",
+    "storage_bucket": "nekogram-im.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:551995224478:android:3010b8545df7fa6e",
+        "mobilesdk_app_id": "1:59666092817:android:1c961173b3b276c01832b0",
         "android_client_info": {
           "package_name": "tw.nekomimi.nekogram"
         }
       },
       "oauth_client": [
         {
-          "client_id": "551995224478-u59bvc0oqd8ma9499rvo9s5vvgofrd0f.apps.googleusercontent.com",
+          "client_id": "59666092817-dc2n2pfbago1o4q1mq79fva0t26tml02.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAC4QRIDv2Tjp79zR2aqFgzYd_s1d_nsHI"
+          "current_key": "AIzaSyApykg3MAYWc22Zpr9xBQOwVpwDsHKkNqU"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59666092817-dc2n2pfbago1o4q1mq79fva0t26tml02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59666092817:android:ed2622079f25ca511832b0",
+        "android_client_info": {
+          "package_name": "tw.nekomimi.nekogram.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59666092817-dc2n2pfbago1o4q1mq79fva0t26tml02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApykg3MAYWc22Zpr9xBQOwVpwDsHKkNqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59666092817-dc2n2pfbago1o4q1mq79fva0t26tml02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

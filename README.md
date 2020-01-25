@@ -25,11 +25,9 @@ MTproto protocol manuals: https://core.telegram.org/mtproto
 You will require Android Studio 3.4, Android NDK rev. 20 and Android SDK 8.1
 
 1. Download the Nekogram source code from https://github.com/Nekogram/Nekogram ( git clone https://github.com/Nekogram/Nekogram.git )
-2. Copy your release.keystore into TMessagesProj/config
-3. Fill out RELEASE_KEY_PASSWORD, RELEASE_KEY_ALIAS, RELEASE_STORE_PASSWORD in local.properties to access your  release.keystore
-4. Open the project in the Studio (note that it should be opened, NOT imported).
-5. If you're compiling DEBUG version, make sure your build variants is set to afatDebugMultidex.
-6. You are ready to compile Nekogram.
+2. Open the project in the Studio (note that it should be opened, NOT imported).
+3. If you're compiling DEBUG version, make sure your build variants is set to afatDebugMultidex.
+4. You are ready to compile Nekogram. It takes time for the first-time build, be patient.
 
 ## Localization
 
