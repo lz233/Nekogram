@@ -79,13 +79,13 @@ android {
             pwd = properties.getProperty("RELEASE_KEY_PASSWORD")
         }
         release {
-            storeFile file("config/release.keystore")
+            storeFile file("config/lz233_key.jks")
             storePassword keystorePwd != null ? keystorePwd : System.getenv("KEYSTORE_PASS")
             keyAlias alias != null ? alias : System.getenv("ALIAS_NAME")
             keyPassword pwd != null ? pwd : System.getenv("ALIAS_PASS")
         }
         debug {
-            storeFile file("config/release.keystore")
+            storeFile file("config/lz233_key.jks")
             storePassword keystorePwd != null ? keystorePwd : System.getenv("KEYSTORE_PASS")
             keyAlias alias != null ? alias : System.getenv("ALIAS_NAME")
             keyPassword pwd != null ? pwd : System.getenv("ALIAS_PASS")
