@@ -93,6 +93,7 @@ public class NekoSettingsActivity extends BaseFragment {
     private int forceTabletRow;
     private int openArchiveOnPullRow;
     private int avatarAsDrawerBackgroundRow;
+    private int showTabsOnForwardRow;
     private int eventTypeRow;
     private int newYearRow;
     private int actionBarDecorationRow;
@@ -445,6 +446,8 @@ public class NekoSettingsActivity extends BaseFragment {
                 types.add(-2);
                 arrayList.add(LocaleController.getString("ProviderBaiduFanyiWeb", R.string.ProviderBaiduFanyiWeb));
                 types.add(-3);
+                arrayList.add(LocaleController.getString("ProviderDeepLWeb", R.string.ProviderDeepLWeb));
+                types.add(-4);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle(LocaleController.getString("TranslationProvider", R.string.TranslationProvider));
@@ -496,7 +499,7 @@ public class NekoSettingsActivity extends BaseFragment {
                 if (view instanceof TextCheckCell) {
                     ((TextCheckCell) view).setChecked(NekoConfig.openArchiveOnPull);
                 }
-            } else if (position == connection2Row) {
+            } else if (position == experimentRow) {
                 NekoConfig.toggleShowHiddenFeature();
                 updateRows();
             } else if (position == hideKeyboardOnChatScrollRow) {
@@ -509,6 +512,11 @@ public class NekoSettingsActivity extends BaseFragment {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationName(NotificationCenter.mainUserInfoChanged);
                 if (view instanceof TextCheckCell) {
                     ((TextCheckCell) view).setChecked(NekoConfig.avatarAsDrawerBackground);
+                }
+            } else if (position == showTabsOnForwardRow) {
+                NekoConfig.toggleShowTabsOnForward();
+                if (view instanceof TextCheckCell) {
+                    ((TextCheckCell) view).setChecked(NekoConfig.showTabsOnForward);
                 }
             }
 
@@ -552,6 +560,7 @@ public class NekoSettingsActivity extends BaseFragment {
         forceTabletRow = rowCount++;
         openArchiveOnPullRow = rowCount++;
         avatarAsDrawerBackgroundRow = rowCount++;
+        showTabsOnForwardRow = rowCount++;
         nameOrderRow = rowCount++;
         eventTypeRow = NekoConfig.showHiddenFeature ? rowCount++ : -1;
         newYearRow = NekoConfig.showHiddenFeature ? rowCount++ : -1;
@@ -669,7 +678,7 @@ public class NekoSettingsActivity extends BaseFragment {
         linearLayoutInviteContainer.setOrientation(LinearLayout.VERTICAL);
         linearLayout.addView(linearLayoutInviteContainer, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
 
-        int count = NekoConfig.showHiddenFeature ? 10 : 9;
+        int count = 10;
         for (int a = 0; a < count; a++) {
             TextCheckCell textCell = new TextCheckCell(context);
             switch (a) {
@@ -987,6 +996,9 @@ public class NekoSettingsActivity extends BaseFragment {
                             case -3:
                                 value = LocaleController.getString("ProviderBaiduFanyiWeb", R.string.ProviderBaiduFanyiWeb);
                                 break;
+                            case -4:
+                                value = LocaleController.getString("ProviderDeepLWeb", R.string.ProviderDeepLWeb);
+                                break;
                             case 3:
                             default:
                                 value = LocaleController.getString("ProviderLingocloud", R.string.ProviderLingocloud);
@@ -1040,6 +1052,8 @@ public class NekoSettingsActivity extends BaseFragment {
                         textCell.setTextAndCheck(LocaleController.getString("HideKeyboardOnChatScroll", R.string.HideKeyboardOnChatScroll), NekoConfig.hideKeyboardOnChatScroll, true);
                     } else if (position == avatarAsDrawerBackgroundRow) {
                         textCell.setTextAndCheck(LocaleController.getString("UseAvatarAsDrawerBackground", R.string.UseAvatarAsDrawerBackground), NekoConfig.avatarAsDrawerBackground, true);
+                    } else if (position == showTabsOnForwardRow) {
+                        textCell.setTextAndCheck(LocaleController.getString("ShowTabsOnForward", R.string.ShowTabsOnForward), NekoConfig.showTabsOnForward, true);
                     }
                     break;
                 }
@@ -1078,7 +1092,8 @@ public class NekoSettingsActivity extends BaseFragment {
                     position == unlimitedFavedStickersRow || position == messageMenuRow || position == deleteAccountRow ||
                     position == translationProviderRow || position == smoothKeyboardRow || position == pauseMusicOnRecordRow ||
                     position == disablePhotoSideActionRow || position == unlimitedPinnedDialogsRow || position == openArchiveOnPullRow ||
-                    position == connection2Row || position == hideKeyboardOnChatScrollRow || position == avatarAsDrawerBackgroundRow;
+                    position == experimentRow || position == hideKeyboardOnChatScrollRow || position == avatarAsDrawerBackgroundRow ||
+                    position == showTabsOnForwardRow;
         }
 
         @Override
@@ -1132,7 +1147,7 @@ public class NekoSettingsActivity extends BaseFragment {
                     position == saveCacheToPrivateDirectoryRow || position == unlimitedFavedStickersRow ||
                     position == disableFilteringRow || position == smoothKeyboardRow || position == pauseMusicOnRecordRow ||
                     position == disablePhotoSideActionRow || position == unlimitedPinnedDialogsRow || position == openArchiveOnPullRow ||
-                    position == hideKeyboardOnChatScrollRow || position == avatarAsDrawerBackgroundRow) {
+                    position == hideKeyboardOnChatScrollRow || position == avatarAsDrawerBackgroundRow || position == showTabsOnForwardRow) {
                 return 3;
             } else if (position == settingsRow || position == connectionRow || position == chatRow || position == experimentRow) {
                 return 4;
